@@ -8,13 +8,20 @@
 </head>
 <body>
 
+<%= render 'layouts/navigation' %>
+
 <% flash.each do |name,msg| %>
 	<ul>
 		<li><%= msg %></li>
 	</ul>
 <% end %>
 
-<%= yield %>
+<div class="container">
+<!-- all your views are served through this embedded ruby yield -->
+	<%= yield %>
+</div>
+
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
