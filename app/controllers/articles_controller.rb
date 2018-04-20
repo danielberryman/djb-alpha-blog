@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
 	def create
 		# render plain: params[:article].inspect 
 		@article = Article.new(article_params)
+		# hardcode the user
+		@article.user = User.first
 		# article_params is a method defined below that is being passed in here
 		if @article.save
 			flash[:notice] = "Article was successfully created"
