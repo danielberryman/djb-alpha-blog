@@ -47,8 +47,17 @@ $navbar-default-bg: black;
 	padding-bottom: 15px;
 }
 
-.article-actions {
-	
+a.link-to-text-color {
+	color: white;
+}
+
+a.link-to-text-color:visited {
+	color: white;
+}
+
+.article-meta-details {
+	border-top: 1px solid grey;
+	margin-top: 15px;
 }
 
 footer {
