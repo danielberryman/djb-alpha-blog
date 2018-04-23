@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update, :show]
-	before_action :require_user, except: [:index]
+	before_action :require_user, except: [:create, :new, :index]
 	before_action :require_same_user, only: [:edit, :update, :show, :destroy]
 
 	def index
@@ -14,8 +14,9 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
+			session[:user_id] = @user.id
 			flash[:success] = "Welcome to the alpha blog #{@user.username}"
-			redirect_to articles_path
+			redirect_to user_path(@user)
 		else
 			render 'new'
 		end
