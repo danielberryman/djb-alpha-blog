@@ -65,6 +65,17 @@ a.link-to-text-color:visited {
 	padding-left: 0;
 }
 
+.badge {
+	background-color: white;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.input_checkbox input {
+	width: auto !important;
+}
+
 footer {
 	padding-top: 15px;
 	border-top: 1px solid grey;
