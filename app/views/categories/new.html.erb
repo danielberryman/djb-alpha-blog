@@ -1,14 +1,6 @@
 <h1 align="center">Create new category</h1>
 
-<% if @category.errors.any? %>
-	<h2>The following errors prevented the user from being updated</h2>
-	<ul>
-		<% @category.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-	</ul>
-<% end %>
-
+<%= render 'shared/errors', obj: @category %>	
 
 <%= form_for(@category, :html => {class: "form-horizontal", role: "form"}) do |f| %>
 	<div class="form-group">
